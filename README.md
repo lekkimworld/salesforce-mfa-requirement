@@ -1,6 +1,8 @@
 # Salesforce June/July 2026, MFA Requirement
 Starting in June and July 2026, Salesforce will require MFA (multi factor authentication) for all user interface based logins to Salesforce orgs. This applies to both production and sandbox orgs. As always the [definite source of truth is the offical Help pages](https://help.salesforce.com/s/articleView?id=005321561&type=1).
 
+*Please note:* This does NOT apply to Developer Edition orgs, trial orgs, scratch orgs, or Experience Cloud logins.
+
 The MFA needs to be strong i.e. email and sms is not enough and needs to be signaled by the IdP (identity provider) if SSO (single sign on) is used. The signalling should be done using the industry standard `amr` or `acr` claims for either OpenID Connect or SAML. If not signalled the user will be prompted for MFA at Salesforce i.e. it is important that your IdP signals this correctly.
 
 Furthermore for admin / priviledged users Salesforce will require **phishing-resistant MFA** i.e. physical security keys, platform authenticators (such as Touch ID, Windows Hello etc) and passkeys. Priviledged users are users with the `System Administrator` profile *OR* one of the following permissions through a permission set or a permission set group: 
