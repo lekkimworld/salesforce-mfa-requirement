@@ -1,5 +1,5 @@
 # Salesforce June/July 2026, MFA Requirement
-Starting in June and July 2026, Salesforce will require MFA (multi factor authentication) for all user interface based logins to Salesforce orgs. This applies to both production and sandbox orgs. As always the (definite source of truth is the offical Help pages)[https://help.salesforce.com/s/articleView?id=005321561&type=1].
+Starting in June and July 2026, Salesforce will require MFA (multi factor authentication) for all user interface based logins to Salesforce orgs. This applies to both production and sandbox orgs. As always the [definite source of truth is the offical Help pages](https://help.salesforce.com/s/articleView?id=005321561&type=1).
 
 The MFA needs to be strong i.e. email and sms is not enough and needs to be signaled by the IdP (identity provider) if SSO (single sign on) is used. The signalling should be done using the industry standard `amr` or `acr` claims for either OpenID Connect or SAML. If not signalled the user will be prompted for MFA at Salesforce i.e. it is important that your IdP signals this correctly.
 
